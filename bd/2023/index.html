@@ -185,10 +185,10 @@
       get a little creative with that ;)</p>
     <div class="btns">
       <a id="img1Btn" class="message btn">Gift 1</a>
-      <a id="img2Btn" class="message btn">Gift 2</a>
-      <a id="img3Btn" class="message btn">Gift 3</a>
+      <a id="img2Btn" class="message fast btn">Gift 2</a>
+      <a id="img3Btn" class="message fast btn">Gift 3</a>
     </div>
-    <a href="https://drive.google.com/drive/folders/18_Z3yvdQ3JnsMpWMzmtuUXxIr7IEXccm?usp=drive_link" class="message btnOutline">See in drive</a>
+    <a href="https://drive.google.com/drive/folders/18_Z3yvdQ3JnsMpWMzmtuUXxIr7IEXccm?usp=drive_link" class="message fast btnOutline">See in drive</a>
   </div>
 
   <div id="myModal" class="modal">
@@ -209,7 +209,8 @@
           messages[currentMessage].style.opacity = '1';
           messages[currentMessage].style.transform = 'translateY(0)';
           currentMessage++;
-          setTimeout(showNextMessage, 5000);
+          let isFast = messages[currentMessage].classList.contains('fast');
+          setTimeout(showNextMessage, isFast ? 500 : 5000);
         }, 100);
       }
     }
